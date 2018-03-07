@@ -1,0 +1,29 @@
+.link
+  padding 20px
+  margin-bottom 15px
+  font-family 'helvetica'
+  box-shadow 1px 1px 2px rgba(0,0,0,0.5)
+  line-height 1.5
+
+  &__wrap
+    margin 20px 0
+
+  &:nth-child(even)
+    background rgba(0,0,0,0.1)
+
+  &__thumb
+    max-width 15%
+
+  &__title
+    font-weight bold
+
+  &__url
+    text-decoration none
+
+  &__fade-enter,
+  &__fade-leave-active
+    opacity 0
+
+  &__fade-enter-active,
+  &__fade-leave-active
+    transition opacity 1s
