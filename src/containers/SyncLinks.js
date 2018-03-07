@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import LinkList from '../components/LinkList'
-import {syncLinks} from '../utils'
+import {pouchSync} from '../utils'
 
 
 const mapStateToProps = state => {
@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     sync: () => {
-      dispatch(syncLinks()) 
+      dispatch(pouchSync()) 
     }
 	}
 }

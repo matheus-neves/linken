@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Link from './Link'
 
-
 class LinkList extends Component {
 
   constructor(props) {
@@ -12,7 +11,6 @@ class LinkList extends Component {
   componentWillMount() {
     this.props.sync()
   }
-
 
   render() {
 
@@ -24,21 +22,20 @@ class LinkList extends Component {
           })
         }
       </ul>
-
     )
 
   }
 
-
 }
 
-
-// LinkList.propTypes = {
-//   links: PropTypes.arrayOf(PropTypes.shape({
-//     title: PropTypes.string.isRequired,
-//     description: PropTypes.string.isRequired,
-//     url: PropTypes.string.isRequired
-//   }).isRequired).isRequired
-// }
+LinkList.propTypes = {
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired
+    }).isRequired
+  ).isRequired
+}
 
 export default LinkList

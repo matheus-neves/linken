@@ -1,8 +1,23 @@
-import {list} from '../actions'
 import PouchDB from 'pouchdb'
 const db = new PouchDB('links')
+import {list, addLink} from '../actions'
 
-export const syncLinks = () => {
+export const pouchPost = (link) => {
+  
+  return dispatch => {
+    db.post(link)
+      .then( res => {
+        const { id, rev} = res
+        dispatch(addLink({...link, id, rev }))
+      }).catch( err => {
+        console.log(err);
+      });
+  }
+  
+}
+
+
+export const pouchSync = () => {
 
     return dispatch => {
       db.replicate.from('http://localhost:5984/links')
